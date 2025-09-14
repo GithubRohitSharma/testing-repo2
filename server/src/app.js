@@ -22,7 +22,7 @@ const partialPath = path.join(__dirname, 'views/partials');
 hbs.registerPartials(partialPath);
 
 // DB
-require('./config/db');
+require('./configs/db');
 
 // Routers
 const authRoutes = require('./routes/auth');
@@ -45,7 +45,4 @@ app.get('*', (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-  console.log('Listening to port ' + PORT);
-});
+module.exports = app;
